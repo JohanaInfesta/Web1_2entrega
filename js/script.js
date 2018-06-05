@@ -4,19 +4,19 @@ fetch("html/home.html").then(
       function(texto){
         document.querySelector(".container").innerHTML = texto;
       });
-  }
-);
+    }
+  );
 
   /*partial render*/
-let jsloads = document.querySelectorAll(".navigate");
-jsloads.forEach(e=> e.addEventListener("click", loadClick));
-
-function loadClick(event)
-{
-  event.preventDefault();
-  fetch("html/anime.html").then( function(response){
+  function loadClick(event){
+    // let url = document.querySelectorAll('href'); //hay que ver como hacer que vaya al html designado
+    event.preventDefault();
+    fetch('html/anime.html').then( function(response){
       console.log("ok");
       console.log(response);
       response.text().then(t=> document.querySelector(".container").innerHTML = t);
     });
-}
+  }
+
+  let jsloads = document.querySelectorAll(".nav-item");
+  jsloads.forEach(e=> e.addEventListener("click", loadClick));
