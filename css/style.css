@@ -1,0 +1,133 @@
+/* font-family: 'Covered By Your Grace', cursive; */
+/* font-family: 'Rock Salt', cursive; */
+/* font-family: 'Nixie One', cursive; */
+
+/*General*/
+.row{
+width: 100%;
+}
+body{
+  background-image: url('../img/fondo.png');
+}
+.navbar-header .navbar-brand, .navbar-header .navbar-brand:hover, .name,
+h5.mt-0, .tbody-ranking td, .tbody-ranking th{
+  color:#FE2EC8;
+}
+.container{
+  margin-top: -65px;
+}
+.navbar-collapse .navbar-nav .nav-link.active,
+.navbar-collapse .navbar-nav .nav-link,
+.navbar-collapse .navbar-nav .nav-link.disabled,
+.navbar-header .navbar-brand, .navbar-header .navbar-brand:hover, .name,
+h5.mt-0, .media-body{
+  font-weight: bold;
+}
+.navbar-collapse .navbar-nav a, h5.mt-0, .tbody-ranking td, .tbody-ranking th{
+  font-family: 'Covered By Your Grace', cursive;
+}
+.navbar-collapse .navbar-nav .nav-link.active,
+.navbar-collapse .navbar-nav .nav-link,
+.navbar-collapse .navbar-nav .nav-link.disabled,
+.media-body, .table .thead-dark th{
+  color: #58D3F7;
+}
+.name, .media-body, .thead-dark th{
+  font-family: 'Nixie One', cursive;
+}
+/*header*/
+.navbar{
+  background-image: url('../img/fondo.png');
+  border: transparent;
+  margin: 20px 0 12% 0;
+}
+
+.navbar-header .navbar-brand, .navbar-header .navbar-brand:hover {
+  font-family: 'Rock Salt', cursive;
+  font-size: 3.5em;
+}
+
+@media (min-width: 992px) {
+  .navbar-expand-lg .navbar-nav{
+    position: absolute;
+    right: 0;
+  }
+}
+.navbar-collapse .navbar-nav a{
+  font-size: 2.5em;
+}
+.navbar-collapse .navbar-nav .nav-link.active,
+.navbar-collapse .navbar-nav .nav-link,
+.navbar-collapse .navbar-nav .nav-link.disabled{
+  text-align: center;
+}
+
+.navbar-collapse .navbar-nav .nav-link.active:hover,
+.navbar-collapse .navbar-nav .nav-link:hover,
+.navbar-collapse .navbar-nav .nav-link.disabled:hover{
+  transition:all 2500ms ease;
+  color: lightyellow;
+}
+.navbar-toggler:not(:disabled):not(.disabled){
+background-color: white;
+}
+
+/*Home*/
+.home-img img{
+  width: 200px;
+  height: 300px;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+.name{
+  margin-bottom: 20px;
+}
+a:hover{
+  text-decoration: none;
+}
+
+/*anime*/
+.media{
+  margin-bottom: 20px;
+}
+img.mr-3{
+  width: 190px;
+  height: 275px;
+}
+h5.mt-0{
+  font-size: 2em;
+}
+.media-body{
+  font-size: 1.2em;
+  padding-left: 15px;
+}
+
+/*background*/
+
+
+
+/*Ranking*/
+.tbody-ranking td img{
+  width: 140px;
+  height: 200px;
+}
+.tbody-ranking td, .tbody-ranking th, .thead-dark th{
+  vertical-align: inherit;
+  border-top: 2px solid #dee2e6;
+  text-align: center;
+}
+.tbody-ranking td, .tbody-ranking th, .thead-dark th{
+font-size: 2em;
+}
+
+/*footer*/
+.mb-0, .fa{
+color: white;
+}
+.btn{
+padding: 0 5px 5px 5px;
+}
+input[type="email"]{
+  text-align: center;
+  border-radius: 13px;
+}
