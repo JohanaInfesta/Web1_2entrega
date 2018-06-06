@@ -1,3 +1,50 @@
 <article class="container cuerpo-foro">
 
+<section class="foro-comentario">
+  <div class="form-foro">
+    <table class="tabla-foro">
+      <thead>
+        <tr class="header-foro">
+          <th class="nombre">Nombre</th>
+          <th class="comentario">Comentario</th>
+          <th class="button">
+            <ul>
+              <li class="editar"></li>
+              <li class="borrar"></li>
+            </ul>
+          </th>
+        </tr>
+      </thead>
+      <tbody id="template">
+
+      </tbody>
+    </table>
+
+    <form class="js-form"> <!-- formulario del foro--->
+      <ul class="form-style-1">
+        <h4>Comentarios</h4>
+        <li><label class="name-label">Name<span class="required">*</span></label></li>
+          <li><input type="text" class="field-divided js-input-nombre" placeholder="Nombre"/></li>
+        <li><label class="coment-label">Comentario</label></li>
+        <li><textarea class="field-long field-textarea js-input-comentario"></textarea></li>
+        <li><button class="btn-default btn enviar" type="submit" onclick="enviarComentario()">Enviar</button></li>
+        <div id="guardarAlert" class="alert" role="alert"></div>
+        <li><h7>Recargar comentarios</h7>
+          <button class="btn-default btn reset" type="button" onclick="resetComentarios()">Reset</button>
+          <p id="infoGroup"></p>
+        </li>
+      </ul>
+    </form>
+  </div>
+
+</section>
+  <aside class="foro-activo">
+    <ul class="form-activo-1">
+      <li> <a href="http://animeseikatsu.foroactivo.com/"> Anime Seikatsu</a></li>
+      <li><a href="http://foro-del-anime.foroactivo.com/"> Anime y Rol</a></li>
+      <li><a href="http://shikirol.activoforo.com/">Shiki Rol</a></li>
+      <li><a href="http://forum.argentina-anime.com/">Argentina Anime</a></li>
+      <li><a href="http://www.otaku-legends.com/">Otaku Legends</a> </li>
+    </ul>
+  </aside>
 </article>

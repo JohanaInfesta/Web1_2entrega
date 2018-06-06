@@ -4,7 +4,7 @@
 
 /*General*/
 .row{
-width: 100%;
+  width: 100%;
 }
 body{
   background-image: url('../img/fondo.png');
@@ -23,7 +23,7 @@ h5.mt-0, .tbody-ranking td, .tbody-ranking th{
 h5.mt-0, .media-body{
   font-weight: bold;
 }
-.navbar-collapse .navbar-nav a, h5.mt-0, .tbody-ranking td, .tbody-ranking th{
+.navbar-collapse .navbar-nav a, h5.mt-0, .tbody-ranking td, .tbody-ranking th, .header-foro th{
   font-family: 'Covered By Your Grace', cursive;
 }
 .navbar-collapse .navbar-nav .nav-link.active,
@@ -32,7 +32,7 @@ h5.mt-0, .media-body{
 .media-body, .table .thead-dark th{
   color: #58D3F7;
 }
-.name, .media-body, .thead-dark th{
+.name, .media-body, .thead-dark th, .foro-activo a{
   font-family: 'Nixie One', cursive;
 }
 /*header*/
@@ -69,7 +69,7 @@ h5.mt-0, .media-body{
   color: lightyellow;
 }
 .navbar-toggler:not(:disabled):not(.disabled){
-background-color: white;
+  background-color: white;
 }
 
 /*Home*/
@@ -104,8 +104,6 @@ h5.mt-0{
 
 /*background*/
 
-
-
 /*Ranking*/
 .tbody-ranking td img{
   width: 140px;
@@ -117,17 +115,51 @@ h5.mt-0{
   text-align: center;
 }
 .tbody-ranking td, .tbody-ranking th, .thead-dark th{
-font-size: 2em;
+  font-size: 2em;
 }
 
+/*Foro*/
+aside{
+  float: right;
+  width: 20%;
+}
+article section.foro-comentario{
+  width: 78%;
+  float: left;
+}
 /*footer*/
 .mb-0, .fa{
-color: white;
+  color: white;
 }
 .btn{
-padding: 0 5px 5px 5px;
+  padding: 0 5px 5px 5px;
 }
 input[type="email"]{
   text-align: center;
   border-radius: 13px;
+}
+.header-foro th{
+  color: pink;
+  font-size: 2em;
+  text-align: center;
+}
+.tabla-foro{
+  width: 70%;
+}
+ul.form-style-1{
+  color: pink;
+  list-style: none;
+}
+.foro-activo a{
+  font-size: 1.2em;
+}
+.foro-activo a, .form-activo-1{
+  color: #88d7ea;
+}
+.form-activo-1{
+  list-style: cjk-heavenly-stem;
+}
+.js-input-comentario{
+width: 340px;
+height: 125px;
 }
