@@ -20,7 +20,7 @@ h5.mt-0, .tbody-ranking td, .tbody-ranking th{
 .navbar-collapse .navbar-nav .nav-link,
 .navbar-collapse .navbar-nav .nav-link.disabled,
 .navbar-header .navbar-brand, .navbar-header .navbar-brand:hover, .name,
-h5.mt-0, .media-body{
+h5.mt-0, .media-body, td.name-foro{
   font-weight: bold;
 }
 .navbar-collapse .navbar-nav a, h5.mt-0, .tbody-ranking td, .tbody-ranking th, .header-foro th{
@@ -32,7 +32,7 @@ h5.mt-0, .media-body{
 .media-body, .table .thead-dark th{
   color: #58D3F7;
 }
-.name, .media-body, .thead-dark th, .foro-activo a{
+.name, .media-body, .thead-dark th, .foro-activo a, #template td{
   font-family: 'Nixie One', cursive;
 }
 /*header*/
@@ -160,6 +160,16 @@ ul.form-style-1{
   list-style: cjk-heavenly-stem;
 }
 .js-input-comentario{
-width: 340px;
-height: 125px;
+  width: 340px;
+  height: 125px;
+}
+#template td{
+  color: white;
+  text-align: center;
+}
+td.name-foro{
+  font-size: 1.7em;
+}
+td.comentario-foro {
+  font-size: 1.3em;
 }

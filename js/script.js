@@ -1,4 +1,4 @@
-fetch("html/foro.html").then(
+fetch("html/home.html").then(
   function(response){
     response.text().then(
       function(texto){
@@ -9,56 +9,73 @@ fetch("html/foro.html").then(
 
   /*partial render*/
 function loadClick(event){
+let urls = this.getAttribute('href');
+let contenedor = document.querySelector(".container");
     // let url = document.querySelectorAll('href'); //hay que ver como hacer que vaya al html designado
   event.preventDefault();
-  fetch('html/anime.html').then( function(response){
+  fetch(urls).then( function(response){
     console.log("ok");
     console.log(response);
-    response.text().then(t=> document.querySelector(".container").innerHTML = t);
+    if (response.ok) {
+    response.text().then(t=> {
+      contenedor.innerHTML = t;
+
+      if (contenedor.querySelector(".tabla-foro")) {
+          loadComentario();
+        }
+      });
+
+
+    }else{
+      contenedor.innerHTML = "<h1> Error... </h1>";
+    }
   });
 }
 
 let jsloads = document.querySelectorAll(".nav-item");
 jsloads.forEach(e=> e.addEventListener("click", loadClick));
 
-let url = 'http://web-unicen.herokuapp.com/api/groups/400/probando_grupo40';
+
+let urlAPI = 'http://web-unicen.herokuapp.com/api/groups/400/probando_grupo40';
 
 function enviarComentario(){
   event.preventDefault();
   let comentarios = {
-    'nombre' : $(".js-input-nombre").val(),
-    'comentario' : $(".js-input-comentario").val(),
+    'nombre' : document.getElementById("js-input-nombre").value,
+    'comentario' : document.getElementById("js-input-comentario").value,
   }
   let info = {
     thing: comentarios //puede ser un objeto JSON!
   };
   if (comentarios) {
-    fetch(url,{
+    fetch(urlAPI,{
       method: 'POST',
-      mode: "cors",
+      mode: "cors", //el modo a utilizar por la petición
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(info),
     }).then( r => console.log(r))
+  loadComentario();
   }
 }
 
-function resetComentarios(){
+function loadComentario(){
   let contenidoComentario = document.querySelector('#template');
   console.log(contenidoComentario);
-  fetch(url,{
-    method :'GET'
-  }).then(r => r.JSON())
-    .then(JSON => MostrarComentarios(contenidoComentario, JSON))
-    .catch(error => contenidoComentario.innerHTML)
+  fetch(urlAPI,{
+    method :'GET',
+  }).then(r => r.json())
+    .then(JSON => MostrarComentarios(JSON))
+    .catch(error => console.log(error))
     console.log(contenidoComentario);
 }
-function MostrarComentarios(contenido, JSON){
-  let html = " "
+function MostrarComentarios(JSON){
+  console.log("entre");
+  let html = " ";
   for (var i = 0; i < JSON.probando_grupo40.length; i++) {
-    html = "<tr id= '" + JSON.probando_grupo40[i]._id + "'>";
-    html += "<td>" + JSON.probando_grupo40[i].thing['nombre'] + "</td>";
-    html += "<td>" + JSON.probando_grupo40[i].thing['comentario'] + "</td></tr>";
+    html += "<tr id= '" + JSON.probando_grupo40[i]._id + "'>";
+    html += "<td class ='name-foro'>" + JSON.probando_grupo40[i].thing['nombre'] + "</td>";
+    html += "<td class ='comentario-foro'>" + JSON.probando_grupo40[i].thing['comentario'] + "</td></tr>";
+    document.querySelector('#template').innerHTML = html;
   }
-console.log(html);
-  contenido.innerHTML = html;
+  console.log(html);
 }
