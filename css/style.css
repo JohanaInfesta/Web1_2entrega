@@ -119,6 +119,9 @@ h5.mt-0{
 }
 
 /*Foro*/
+aside, article section.foro-comentario{
+    display: inline-table;
+}
 aside{
   float: right;
   width: 20%;
@@ -127,24 +130,13 @@ article section.foro-comentario{
   width: 78%;
   float: left;
 }
-/*footer*/
-.mb-0, .fa{
-  color: white;
-}
-.btn{
-  padding: 0 5px 5px 5px;
-}
-input[type="email"]{
-  text-align: center;
-  border-radius: 13px;
-}
 .header-foro th{
   color: pink;
   font-size: 2em;
   text-align: center;
 }
 .tabla-foro{
-  width: 70%;
+  width: 100%;
 }
 ul.form-style-1{
   color: pink;
@@ -172,4 +164,25 @@ td.name-foro{
 }
 td.comentario-foro {
   font-size: 1.3em;
+}
+#template tr td ul {
+  list-style: none;
+}
+button.btn.btn-outline-secondary {
+  color: #fd22009c;
+}
+textarea{
+  width: 90%;
+  height: 150px;
+}
+/*footer*/
+.mb-0, .fa{
+  color: white;
+}
+.btn{
+  padding: 0 5px 5px 5px;
+}
+input[type="email"]{
+  text-align: center;
+  border-radius: 13px;
 }
