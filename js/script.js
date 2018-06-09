@@ -20,6 +20,8 @@ let contenedor = document.querySelector(".container");
       contenedor.innerHTML = t;
       document.querySelector("#enviar-coment").addEventListener("click", enviarComentario);
       document.querySelector("#reset-coment").addEventListener("click", resetComentarios);
+      // document.querySelector("#eliminar-coment").addEventListener("click", eliminarComentario(this))
+
       if (contenedor.querySelector(".tabla-foro")) {
           loadComentario();
         }
@@ -73,15 +75,15 @@ function MostrarComentarios(JSON){
     html += "<td class ='name-foro'>" + JSON.probando_grupo40[i].thing['nombre'] + "</td>";
     html += "<td class ='comentario-foro'>" + JSON.probando_grupo40[i].thing['comentario'] + "</td>";
     html += "<td> <ul>";
-    html += "<li><button class='btn btn-outline-secondary' onclick='eliminarComentario(this)' result-id='"+ JSON.probando_grupo40[i]._id +"'>X</button></li>";
-    html += "<li><button class='btn btn-outline-secondary' onclick='editarComentario(this)' result-id = '"+ JSON.probando_grupo40[i]._id +"'>Editar</button></li>";
+    html += "<li><button class='btn btn-outline-secondary' id='eliminar-coment' onclick='eliminarComentario(this)' result-id='"+ JSON.probando_grupo40[i]._id +"'>X</button></li>";
+    html += "<li><button class='btn btn-outline-secondary' id='editar-coment' onclick='editarComentario(this)' result-id = '"+ JSON.probando_grupo40[i]._id +"'>Editar</button></li>";
     html += "</ul></td></tr>";
   }
     document.querySelector('#template').innerHTML = html;
   console.log(html);
 }
 /* Funcion para eliminar comentarios buscados por su id */
-function eliminarComentario(element){//quitar onclick del boton en la linea 75
+function eliminarComentario(element){//quitar onclick del boton en la linea 78
   console.log(element);
   let _id = element.getAttribute('result-id');
   let urlDelet = urlAPI + "/"+ _id;
@@ -91,10 +93,10 @@ function eliminarComentario(element){//quitar onclick del boton en la linea 75
   }).then(r => loadComentario()) // para q me refresque el onload sin tener q actualizar la pag
 }
 /* funcion para editar los comentarios buscados por "se supone que por id" */
-function editarComentario(element){//quitar onclick del boton en la linea 76
+function editarComentario(element){//quitar onclick del boton en la linea 79
   console.log("hola");
-  let thing = element.getAttribute('result-id');
-  let urlEdit = urlAPI + "/"+ thing;
+  let _id = element.getAttribute('result-id');
+  let urlEdit = urlAPI + "/"+ _id;
   fetch(urlEdit,{
     method : 'PUT',
     headers : {"Content-Type": "application/json"},
