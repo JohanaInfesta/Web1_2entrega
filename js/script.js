@@ -75,17 +75,24 @@ function MostrarComentarios(JSON){
     html += "<td class ='name-foro'>" + JSON.probando_grupo40[i].thing['nombre'] + "</td>";
     html += "<td class ='comentario-foro'>" + JSON.probando_grupo40[i].thing['comentario'] + "</td>";
     html += "<td> <ul>";
-    html += "<li><button class='btn btn-outline-secondary' id='eliminar-coment' onclick='eliminarComentario(this)' result-id='"+ JSON.probando_grupo40[i]._id +"'>X</button></li>";
-    html += "<li><button class='btn btn-outline-secondary' id='editar-coment' onclick='editarComentario(this)' result-id = '"+ JSON.probando_grupo40[i]._id +"'>Editar</button></li>";
+    html += "<li><button class='btn btn-outline-secondary eliminar-coment' result-id='"+ JSON.probando_grupo40[i]._id +"'>X</button></li>";
+    html += "<li><button class='btn btn-outline-secondary editar-coment' result-id = '"+ JSON.probando_grupo40[i]._id +"'>Editar</button></li>";
     html += "</ul></td></tr>";
   }
-    document.querySelector('#template').innerHTML = html;
+    let d= document.querySelector('#template');
+    d.innerHTML = html;
+    for (let b of d.querySelectorAll(".eliminar-coment")) {
+      b.addEventListener("click", eliminarComentario);
+  }
+    for (b of d.querySelectorAll(".editar-coment")) {
+      b.addEventListener("click", editarComentario);
+    }
   console.log(html);
 }
 /* Funcion para eliminar comentarios buscados por su id */
-function eliminarComentario(element){//quitar onclick del boton en la linea 78
-  console.log(element);
-  let _id = element.getAttribute('result-id');
+function eliminarComentario(){
+  console.log(this);
+  let _id = this.getAttribute('result-id');
   let urlDelet = urlAPI + "/"+ _id;
   fetch(urlDelet,{
     method : 'DELETE',
@@ -93,14 +100,14 @@ function eliminarComentario(element){//quitar onclick del boton en la linea 78
   }).then(r => loadComentario()) // para q me refresque el onload sin tener q actualizar la pag
 }
 /* funcion para editar los comentarios buscados por "se supone que por id" */
-function editarComentario(element){//quitar onclick del boton en la linea 79
+function editarComentario(){
   console.log("hola");
-  let _id = element.getAttribute('result-id');
+  let _id = this.getAttribute('result-id');
   let urlEdit = urlAPI + "/"+ _id;
   fetch(urlEdit,{
     method : 'PUT',
     headers : {"Content-Type": "application/json"},
-    body : JSON.stringify(element), //ver como se hace la funcion que continua de aca para poder
+    body : JSON.stringify(), //ver como se hace la funcion que continua de aca para poder
   }).then(r => console.log(r))//editar los comentarios
 //tiene que traer lo que esta dentro de ese thing y bajarlo al form para poder editarlo
 }
