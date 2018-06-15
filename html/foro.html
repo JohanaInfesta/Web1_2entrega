@@ -1,38 +1,43 @@
 <article class="container cuerpo-foro" onload="loadComentario()">
 
-<section class="foro-comentario">
-  <div class="form-foro">
-    <table class="tabla-foro">
-      <thead>
-        <tr class="header-foro">
-          <th class="nombre">Nombre</th>
-          <th class="comentario">Comentario</th>
-          <th class="button"></th>
-        </tr>
-      </thead>
-      <tbody id="template">
+  <section class="foro-comentario">
+    <div class="form-foro">
+      <table class="tabla-foro" id="tabla">
+        <thead>
+          <tr class="header-foro">
+            <th class="nombre">Nombre</th>
+            <th class="comentario">Comentario</th>
+            <th class="button"></th>
+          </tr>
+          <tr>
+            <td colspan="4">
+              <input id="buscar" type="text" class="form-control" placeholder="Escriba algo para filtrar" />
+            </td>
+          </tr>
+        </thead>
+        <tbody id="template">
 
-      </tbody>
-    </table>
+        </tbody>
+      </table>
 
-    <form class="js-form"> <!-- formulario del foro--->
-      <ul class="form-style-1">
-        <h4>Comentarios</h4>
-        <li><label class="name-label">Name<span class="required">*</span></label></li>
+      <form class="js-form"> <!-- formulario del foro--->
+        <ul class="form-style-1">
+          <h4>Comentarios</h4>
+          <li><label class="name-label">Name<span class="required">*</span></label></li>
           <li><input type="text" class="field-divided" id="js-input-nombre" placeholder="Nombre"/></li>
-        <li><label class="coment-label">Comentario</label></li>
-        <li><textarea class="field-long field-textarea" id="js-input-comentario"></textarea></li>
-        <li><button class="btn-default btn" id="enviar-coment" type="submit">Enviar</button></li>
-        <div id="guardarAlert" class="alert" role="alert"></div>
-        <li><h7>Recargar comentarios</h7>
-          <button class="btn-default btn" id="reset-coment" type="button">Reset</button>
-          <p id="infoGroup"></p>
-        </li>
-      </ul>
-    </form>
-  </div>
+          <li><label class="coment-label">Comentario</label></li>
+          <li><textarea class="field-long field-textarea" id="js-input-comentario" placeholder="deja tu comentario"></textarea></li>
+          <li><button class="btn-default btn" id="enviar-coment" type="submit">Enviar</button></li>
+          <div id="guardarAlert" class="alert" role="alert"></div>
+          <li><h7>Recargar comentarios</h7>
+            <button class="btn-default btn" id="reset-coment" type="button">Reset</button>
+            <p id="infoGroup"></p>
+          </li>
+        </ul>
+      </form>
+    </div>
 
-</section>
+  </section>
   <aside class="foro-activo">
     <ul class="form-activo-1">
       <li> <a href="http://animeseikatsu.foroactivo.com/"> Anime Seikatsu</a></li>
