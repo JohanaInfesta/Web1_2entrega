@@ -105,19 +105,18 @@ fetch("html/home.html").then(
     let _id = this.getAttribute('result-id');
     let urlEdit = urlAPI + "/"+ _id;
     let html = " ";
-    html += "<input type='text' id='nombre-edit'/>";
-    html += "<input type='text' id='coment-edit'/>";
-    html += "<button class='editar-coment'>actualizar</button>";
+    html += "<tr><td><input type='text' id='nombre-edit'/></td>";
+    html += "<td><input type='text' id='coment-edit'/></td>";
+    html += "<td><button class='btn btn-outline-secondary edit-comentario'>Actualizar</button></td></tr>";
     let d= document.querySelector('#template');
     d.innerHTML = html;
 
-    for (b of d.querySelectorAll(".editar-coment")) {
+    for (b of d.querySelectorAll(".edit-comentario")) {
       b.addEventListener("click", peticionPut(urlEdit));
     }
-
   }
   function peticionPut(urlEdit){
-    console.log("entre lpm");
+    console.log("entre locura");
     let comentarios = {
       'nombre' : document.getElementById("nombre-edit").value,
       'comentario' : document.getElementById("coment-edit").value,

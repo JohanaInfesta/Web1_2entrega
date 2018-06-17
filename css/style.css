@@ -119,7 +119,7 @@ h5.mt-0{
 
 /*Foro*/
 aside, article section.foro-comentario{
-    display: inline-table;
+  display: inline-table;
 }
 aside{
   float: right;
@@ -154,6 +154,9 @@ ul.form-style-1{
   width: 340px;
   height: 125px;
 }
+.form-control{
+  width: 85%;
+}
 #template td{
   color: white;
   text-align: center;
@@ -173,6 +176,18 @@ button.btn.btn-outline-secondary {
 textarea{
   width: 90%;
   height: 150px;
+}
+input#coment-edit , input#nombre-edit{
+  background-color: #c2939b94;
+  color: white;
+  border-radius: 8px;
+  width: 100%;
+}
+.field-divided, .field-long{
+  border-radius: 8px;
+}
+.field-divided{
+  text-align: center;
 }
 /*footer*/
 .mb-0, .fa{
